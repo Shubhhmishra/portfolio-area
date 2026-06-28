@@ -13,3 +13,10 @@ function renderOrbit() {
 }
 
 document.addEventListener('DOMContentLoaded', initApp);
+
+// Change your app.js to fetch the JSON file
+async function loadData() {
+    const response = await fetch('./content.json');
+    const data = await response.json();
+    return data;
+}
