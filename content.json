@@ -1,1 +1,15 @@
-
+{
+  "achievements": [
+    { "title": "10k YouTube Subscribers", "tier": "legendary", "blurb": "Grew a gaming channel from scratch." },
+    { "title": "Hackathon Winner 2025", "tier": "gold", "blurb": "Best Use of AI." }
+  ],
+  "projects": [
+    { "name": "Hoverion", "blurb": "Hybrid drone-car for disaster management.", "stack": ["Arduino", "Python"] }
+  ],
+  "editing": [
+    { "title": "Showreel 2026", "blurb": "Motion graphics and color grading demo." }
+  ],
+  "videos": [
+    { "title": "Highlight Reel", "url": "#" }
+  ]
+}
