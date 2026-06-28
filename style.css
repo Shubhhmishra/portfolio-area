@@ -1,0 +1,67 @@
+/* Basic Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #06060c;
+    color: #edebff;
+    font-family: 'Sora', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Console Navigation */
+#console-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 248px;
+    height: 100vh;
+    background: rgba(8, 8, 16, 0.7);
+    backdrop-filter: blur(14px);
+    border-right: 1px solid rgba(255, 255, 255, 0.09);
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sections */
+section {
+    min-height: 100vh;
+    padding: 90px 6vw;
+    display: flex;
+    align-items: center;
+}
+
+.wrap {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+/* Grid layout for cards */
+#ach-grid,
+#project-grid,
+#editing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Glassmorphism Effect */
+.glass {
+    background: rgba(18, 18, 33, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    padding: 20px;
+}
+
+h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
