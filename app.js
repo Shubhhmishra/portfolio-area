@@ -1,38 +1,38 @@
-// app.js
-fetch('./content.json')
-
-function initApp() {
-    renderAchievements(SITE_DATA.achievements);
-    renderProjects(SITE_DATA.projects);
-    renderEditing(SITE_DATA.editing);
-}
-
-// Add logic to populate 3D Orbit with video thumbnails
-function renderOrbit() {
-    // Logic to loop through SITE_DATA and create 3D meshes
-}
-
-document.addEventListener('DOMContentLoaded', initApp);
-
-// Change your app.js to fetch the JSON file
+// 1. Logic to fetch your content from the JSON file
 async function loadData() {
-    const response = await fetch('./content.json');
-    const data = await response.json();
-    return data;
+    try {
+        const response = await fetch('./content.json');
+        if (!response.ok) throw new Error("Could not load content.json");
+        return await response.json();
+    } catch (error) {
+        console.error("Error loading data:", error);
+    }
 }
 
+// 2. The main initialization function (Only one exists now!)
 async function initApp() {
-    const SITE_DATA = await loadData(); // Wait for content.json to load
-    renderAchievements(SITE_DATA.achievements);
-    renderProjects(SITE_DATA.projects);
-    renderEditing(SITE_DATA.editing);
-    renderOrbit(SITE_DATA.videos); // Call your 3D logic
+    console.log("App is initializing...");
+
+    // Wait for the data to load
+    const SITE_DATA = await loadData();
+
+    if (SITE_DATA) {
+        // Now call your render functions using the loaded data
+        renderAchievements(SITE_DATA.achievements);
+        renderProjects(SITE_DATA.projects);
+        renderEditing(SITE_DATA.editing);
+        renderOrbit(SITE_DATA.videos);
+    }
 }
 
+// 3. Logic to populate 3D Orbit
 function renderOrbit(videos) {
+    if (!videos) return;
     videos.forEach((video, index) => {
-        // 1. Create a plane/geometry
-        // 2. Load the video thumbnail as a Texture
-        // 3. Position it in the orbit scene based on 'index'
+        // Logic for your 3D meshes goes here
+        console.log("Rendering video mesh:", video.title);
     });
 }
+
+// 4. Run the app once the page is fully loaded
+document.addEventListener('DOMContentLoaded', initApp);
